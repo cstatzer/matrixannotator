@@ -537,16 +537,7 @@ server <- function(input, output) {
     })
     
     
-    # #import the specified matrisome
-    # # if(input$species_of_origin == "Celegans") {
-    #   df <- import_matrisome(matrisome_path = "./data/20181001_matrisome.csv",unique_column = "WormBaseID")
-    #   values$df <- separate_orthologies(df)
-    #   print("matrisome loaded")
-    #   ## saveRDS(object = df,file = "./data/df.rds")
-    #   ## df <- readRDS("./data/df.rds")
-    #   print(nrow(values$df))
-    # # }
-    
+
     # matrisome overview table
     values$df <- readRDS("./data/df.rds")
     print(paste("nrow(values$df",nrow(values$df)))
