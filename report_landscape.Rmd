@@ -1,0 +1,41 @@
+---
+title: "Matrisome report"
+header-includes:
+- \usepackage{pdflscape}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+output: pdf_document
+---
+
+
+
+\newpage
+\blandscape
+
+### mapped genes
+```{r,echo=FALSE}
+values$convtable[,!colnames(values$convtable) %in% "Gene description"]
+```
+
+# unmapped genes
+```{r,echo=FALSE}
+values$unmapped
+```
+
+
+\elandscape
+
+\newpage
+
+## Occurrence in matrisome
+```{r,echo=FALSE,message=FALSE}
+export_formattable(f = values$tab_formatted,file = "./webshot_pdf_to_png.png")
+```
+
+
+## Summary by matrisome divisions
+```{r,echo=FALSE,message=FALSE}
+export_formattable(f = values$tab_formatted_summary,file = "./webshot_pdf_to_png_summary.png")
+```
+
+
